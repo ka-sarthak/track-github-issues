@@ -1,4 +1,5 @@
 import click
+
 from track_issues.tracker import IssueTracker
 
 
@@ -27,6 +28,7 @@ def run_tracker(users, orgs, per_page, page_limit, gh_token):
         page_limit=page_limit,
         gh_token=gh_token,
     )
+    tracker.run()
 
 
 @click.command()
@@ -54,7 +56,3 @@ def main(users, orgs, per_page, page_limit, gh_token):
         page_limit=page_limit,
         gh_token=gh_token,
     )
-
-
-if __name__ == '__main__':
-    main()
