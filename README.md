@@ -54,7 +54,8 @@ jobs:
 - `users`: Comma-separated list of GitHub usernames whose assigned issues
   should be tracked.
 - `organizations`: (Optional) Comma-separated list of organization names to filter
-  issues from. If not specified, issues from all organizations will be tracked.
+  issues from. If not specified, issues from all accessible organizations (based on the
+  token's permissions) will be tracked.
 - `per_page`: (Optional) Number of results per page for API requests. Default: 100
 - `page_limit`: (Optional) Maximum number of pages to fetch. Default: 10
 
