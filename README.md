@@ -27,7 +27,7 @@ name: Track Issues
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Set the frequency of sync. For example, run every hour.
+    - cron: '0 * * * *'   # Set how often to check for issue updates. For example, run every hour.
   workflow_dispatch:      # Allow manual triggering
 
 permissions:
