@@ -38,7 +38,7 @@ jobs:
   track-issues:
     runs-on: ubuntu-latest
     steps:
-      - name: Run issues-tracker Action
+      - name: Run track-github-issues Action
         uses: ka-sarthak/track-github-issues@v1
         with:
           users: "user1,user2" 
