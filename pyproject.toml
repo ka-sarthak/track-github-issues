@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "setuptools_scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "track-github-issues"
+dynamic = ["version"]
+description = "Track assigned GitHub issues across organizations"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "click",
+]
+
+[project.scripts]
+track-issues = "track_issues.cli:main"
