@@ -7,7 +7,7 @@ import sys
 import requests
 
 
-class IssueTracker:
+class GitHubIssueTracker:
     """Main class for tracking issues across organizations."""
 
     def __init__(

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "track-github-issues"
 dynamic = ["version"]
-description = "Track assigned GitHub issues across organizations"
+description = "Track GitHub issues across organizations based on user assignments."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -13,13 +13,10 @@ dependencies = [
     "click",
 ]
 [project.optional-dependencies]
-dev = [
-    "pytest",
-    "ruff",
-]
+dev = ["ruff"]
 
 [tool.ruff]
-include = ["src/*.py", "tests/*.py"]
+include = ["src/*.py"]
 # Exclude a variety of commonly ignored directories.
 exclude = [
     ".bzr",
@@ -96,4 +93,4 @@ where = ["src"]
 [tool.setuptools_scm]
 
 [project.scripts]
-track-issues = "track_issues.cli:main"
+track-github-issues = "track_github_issues.cli:main"

@@ -1,5 +1,6 @@
-name: issues-tracker
-description: Track assigned GitHub issues across organizations and maintain tracking issues in this repo.
+name: track-github-issues
+description: Track GitHub issues across organizations based on user assignments.
+author: Sarthak Kapoor
 
 inputs:
   users:
@@ -28,17 +29,20 @@ runs:
 
     - name: Install package
       shell: bash
+      env:
+        # to avoid issues with setuptools_scm dynamic versioning
+        SETUPTOOLS_SCM_PRETEND_VERSION: "0.0.0"
       run: |
         pip install ${{ github.action_path }}
 
-    - name: Run issue tracker
+    - name: Run GitHub issue tracker
       shell: bash
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        track-issues \
+        track-github-issues \
           --users "${{ inputs.users }}" \
           --orgs "${{ inputs.organizations }}" \
           --per-page "${{ inputs.per_page }}" \
           --page-limit "${{ inputs.page_limit }}" \
-          --token "${{ env.GH_TOKEN }}"
+          --gh-token "${{ env.GH_TOKEN }}"
