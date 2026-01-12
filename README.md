@@ -38,9 +38,6 @@ jobs:
   track-issues:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Run issues-tracker Action
         uses: ka-sarthak/track-github-issues@v1
         with:
