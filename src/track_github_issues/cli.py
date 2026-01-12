@@ -1,6 +1,6 @@
 import click
 
-from track_issues.tracker import IssueTracker
+from track_github_issues.tracker import GitHubIssueTracker
 
 
 def parse_comma_list(ctx, param, value):
@@ -21,7 +21,7 @@ def run_tracker(users, orgs, per_page, page_limit, gh_token):
         click.echo('Error: No GitHub token provided.', err=True)
         return
 
-    tracker = IssueTracker(
+    tracker = GitHubIssueTracker(
         users=users,
         orgs=orgs,
         per_page=per_page,

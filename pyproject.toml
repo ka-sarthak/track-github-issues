@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "track-github-issues"
 dynamic = ["version"]
-description = "Track assigned GitHub issues across organizations"
+description = "Track GitHub issues across organizations based on user assignments."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
