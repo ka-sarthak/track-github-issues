@@ -1,0 +1,44 @@
+name: issues-tracker
+description: Track assigned GitHub issues across organizations and maintain tracking issues in this repo.
+
+inputs:
+  users:
+    description: Comma-separated list of GitHub user  names to query for assigned open issues.
+    required: true
+  organizations:
+    description: Comma-separated list of organization names to filter search. Optional.
+    required: false
+    default: ''
+  per_page:
+    description: Results per page (used to compute effective limit). Optional.
+    required: false
+    default: '100'
+  page_limit:
+    description: Number of pages to fetch (used to compute effective limit). Optional.
+    required: false
+    default: '10'
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install package
+      shell: bash
+      run: |
+        pip install ${{ github.action_path }}
+
+    - name: Run issue tracker
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        track-issues \
+          --users "${{ inputs.users }}" \
+          --orgs "${{ inputs.organizations }}" \
+          --per-page "${{ inputs.per_page }}" \
+          --page-limit "${{ inputs.page_limit }}" \
+          --token "${{ env.GH_TOKEN }}"
