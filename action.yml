@@ -28,6 +28,9 @@ runs:
 
     - name: Install package
       shell: bash
+      env:
+        # to avoid issues with setuptools_scm dynamic versioning
+        SETUPTOOLS_SCM_PRETEND_VERSION: "0.0.0"
       run: |
         pip install ${{ github.action_path }}
 
@@ -41,4 +44,4 @@ runs:
           --orgs "${{ inputs.organizations }}" \
           --per-page "${{ inputs.per_page }}" \
           --page-limit "${{ inputs.page_limit }}" \
-          --token "${{ env.GH_TOKEN }}"
+          --gh-token "${{ env.GH_TOKEN }}"
