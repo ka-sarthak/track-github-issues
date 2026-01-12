@@ -35,7 +35,7 @@ permissions:
   contents: read
 
 jobs:
-  sync-issues:
+  track-issues:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
