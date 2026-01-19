@@ -124,7 +124,7 @@ class GitHubIssueTracker:
             # Add organization filter if specified
             if self.organizations:
                 org_filter = ' '.join([f'org:{org}' for org in self.organizations])
-                query_parts.append(f'({org_filter})')
+                query_parts.append(f'{org_filter}')
 
             search_query = ' '.join(query_parts)
 
@@ -291,7 +291,7 @@ class GitHubIssueTracker:
         # Track processed URLs
         processed_urls: set[str] = set()
 
-        # Process assigned issues
+        # Process assigned issues: create tracking issues as needed
         for issue in assigned_issues:
             original_url = issue['html_url']
             processed_urls.add(original_url)
