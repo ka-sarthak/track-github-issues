@@ -1,6 +1,8 @@
 name: track-github-issues
 description: Track GitHub issues across organizations based on user assignments.
 author: Sarthak Kapoor
+icon: check-circle
+color: blue
 
 inputs:
   users:
