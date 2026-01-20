@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run track-github-issues Action
-        uses: ka-sarthak/track-github-issues@v1
+        uses: ka-sarthak/track-github-issues@v1.0.1
         with:
           users: "user1,user2" 
           organizations: "org1,org2"
